@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Ui/footer/Footer";
-import "../../components/menu/Menu.css";
-import { Link } from "react-router-dom";
-
-import "./Home.css";
 import Header from "../../components/Ui/header/Header";
+import style from "./Home.module.css"
 
 function Home() {
   const [data, setData] = useState([]);
@@ -24,20 +22,20 @@ function Home() {
   };
 
   return (
-    <div className="home-container">
+    <div className={style.homeContainer}>
       <Header/>
-      <div className="product-list">
+      <div className={style.productList}>
         {data?.map((item) => (
           <Link
             to={`/product/${item?.id}`}
             key={item?.id}
-            className="product-card"
+            className={style.productCard}
           >
-            <img src={item.image} alt={item.name} className="product-image" />
-            <div className="product-info">
-              <h2 className="product-name">{item.name}</h2>
-              <p className="product-brand">{item.brand}</p>
-              <p className="product-price">${item.price}</p>
+            <img src={item.image} alt={item.name} className={style.productImage} />
+            <div className={style.productInfo}>
+              <h2 className={style.productName}>{item.name}</h2>
+              <p className={style.productBrand}>{item.brand}</p>
+              <p className={style.productPrice}>${item.price}</p>
             </div>
           </Link>
         ))}

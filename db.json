@@ -8,7 +8,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "1",
@@ -18,7 +25,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "2",
@@ -28,7 +42,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"Ryzen 3",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "3",
@@ -38,7 +59,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "4",
@@ -47,7 +75,14 @@
       "price": "100",
       "storage": "128",
       "amount": "20",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "5",
@@ -57,7 +92,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "6",
@@ -67,8 +109,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "7",
@@ -78,7 +126,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "8",
@@ -88,7 +143,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     },
     {
       "id": "9",
@@ -98,7 +160,14 @@
       "storage": "128",
       "amount": "20",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
-      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg",
+      "screenSize": "4 Inches",
+      "color":"silver",
+      "CPU":"R3 7320U",
+      "ram":"8 GB",
+      "opratiingSystem":"Windows 11 s",
+      "specialFeature":"Backlit Keyboard",
+      "graphicsCard":"Integrated"
     }
   ]
 }

@@ -9,28 +9,28 @@
   }
   
   .upper {
-    width: 100%; /* Ensure it takes the full width of the parent */
+    width: 100%; 
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background-color: rgb(19, 25, 33);
-    padding: 10px 0; /* Add padding for better spacing */
+    padding: 10px 0; 
   }
   
   .downer {
-    width: 100%; /* Ensure it takes the full width of the parent */
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     color: white;
     background-color: rgb(35, 47, 62);
-    padding: 10px 0; /* Add padding for better spacing */
+    padding: 10px 0;
   }
   
   .upper img {
-    height: 50px; /* Adjust the height of the image */
+    height: 50px;
   }
   
   .upper form {
@@ -43,14 +43,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 10px; /* Add margin for better spacing */
-    position: relative; /* Needed for positioning dropdown */
+    margin-right: 10px;
+    position: relative; 
   }
   
   .upper form div ul {
-    display: none; /* Hide the dropdown by default */
+    display: none;
     position: absolute;
-    top: 100%; /* Position below the parent div */
+    top: 100%; 
     left: 0;
     background-color: white;
     list-style: none;
@@ -59,12 +59,12 @@
   }
   
   .upper form div:hover ul {
-    display: block; /* Show dropdown on hover */
+    display: block; 
   }
   
   .upper form input {
     padding: 5px;
-    margin-right: 10px; /* Add margin for better spacing */
+    margin-right: 10px; 
   }
   
   .upper form svg {
@@ -80,7 +80,7 @@
   }
   
   .downer ul li {
-    margin: 0 10px; /* Add margin for better spacing */
+    margin: 0 10px;
   }
   
   .downer ul li p {
@@ -91,4 +91,5 @@
   .icon-menu-container {
     display: flex;
     align-items: center;
+    color: white;
   }

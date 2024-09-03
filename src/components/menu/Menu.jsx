@@ -1,6 +1,6 @@
 
 import { useState, useEffect, useRef } from "react";
-import "./Menu.css";
+import style from "./Menu.module.css"
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,21 +25,21 @@ const Menu = () => {
   }, []);
 
   return (
-    <div className="hamburger-menu-container">
-      <div className="hamburger-icon" onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
+    <div className={style.hamburgerMenuContainer}>
+      <div className={style.hamburgerIcon} onClick={toggleMenu}>
+        <div className={style.bar}></div>
+        <div className={style.bar}></div>
+        <div className={style.bar}></div>
       </div>
-      <div className={`menu ${isOpen ? "open" : ""}`} ref={menuRef}>
-        <p>Digital Content & Devices</p>
+      <div className={`${style.menu} ${isOpen ? style.open : ""}`} ref={menuRef}>
+        <p className={style.title}>Digital Content & Devices</p>
         <ul>
           <li>Amazon Music</li>
           <li>Kindle E-readers & Books</li>
           <li>Amazon Appstore</li>
         </ul>
-        <div className="bar"></div>
-        <p>Shop by Department</p>
+        <p className={style.title}>Shop by Department</p>
+        <div className={style.row}></div>
         <ul>
           <li>Electronics</li>
           <li>Computer</li>
@@ -47,8 +47,8 @@ const Menu = () => {
           <li>Arts & Crafts</li>
           <li>See All</li>
         </ul>
-        <p>Programs & Features</p>
-        <div className="bar"></div>
+        <p className={style.title}>Programs & Features</p>
+        <div className={style.row}></div>
         <ul>
           <li>Gift Cards</li>
           <li>Shop By Interest</li>
@@ -57,8 +57,8 @@ const Menu = () => {
           <li>International Shopping</li>
           <li>See All</li>
         </ul>
-        <p className="title">Help & Settings</p>
-        <div className="bar"></div>
+        <p className={style.title}>Help & Settings</p>
+        <div className={style.row}></div>
         <ul>
           <li>Your Account</li>
           <li>English</li>

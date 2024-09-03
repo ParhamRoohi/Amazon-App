@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
-import "./Product.css";
+import axios from "axios";
+import style from "./Product.module.css";
 import Header from "../../components/Ui/header/Header";
 import Footer from "../../components/Ui/footer/Footer";
 
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [quantity, setQuantity] = useState(1);
-  const [status, setStatus] = useState(false);
-  const [totalPrice, setTotalPrice] = useState(100);
+  const [selectedCpu, setSelectedCpu] = useState({ name: "R3 7320U", price: 299.99 });
+
+  // const [quantity, setQuantity] = useState(1);
+  // const [status, setStatus] = useState(false);
+  // const [totalPrice, setTotalPrice] = useState(100);
 
   useEffect(() => {
     getProduct();
@@ -26,32 +28,33 @@ function Product() {
     }
   };
 
-  const handleAddToCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProductIndex = cart.findIndex(
-      (item) => item.id === product.id
-    );
 
-    if (existingProductIndex >= 0) {
-      cart[existingProductIndex].totalPrice =
-        product.price * cart[existingProductIndex].quantity;
-      cart[existingProductIndex].quantity += quantity;
-    } else {
-      cart.push({ ...product, quantity, totalPrice: product.price * quantity });
-    }
+  // const handleAddToCart = () => {
+  //   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  //   const existingProductIndex = cart.findIndex(
+  //     (item) => item.id === product.id
+  //   );
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    setStatus(true);
-    setTotalPrice(product.price * quantity);
-  };
-  const handleRemoveFromCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const updatedCart = cart.filter((item) => item.id !== product.id);
+  //   if (existingProductIndex >= 0) {
+  //     cart[existingProductIndex].totalPrice =
+  //       product.price * cart[existingProductIndex].quantity;
+  //     cart[existingProductIndex].quantity += quantity;
+  //   } else {
+  //     cart.push({ ...product, quantity, totalPrice: product.price * quantity });
+  //   }
 
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setStatus(false);
-    setTotalPrice(product.price * quantity);
-  };
+  //   localStorage.setItem("cart", JSON.stringify(cart));
+  //   setStatus(true);
+  //   setTotalPrice(product.price * quantity);
+  // };
+  // const handleRemoveFromCart = () => {
+  //   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  //   const updatedCart = cart.filter((item) => item.id !== product.id);
+
+  //   localStorage.setItem("cart", JSON.stringify(updatedCart));
+  //   setStatus(false);
+  //   setTotalPrice(product.price * quantity);
+  // };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -60,14 +63,18 @@ function Product() {
   return (
     <>
       <Header />
-      <div className="container">
-        <div className="img"></div>
-        <div className="detail">
-          <h1 className="product-detail-name">{product.name}</h1>
-          <p className="product-detail-description">{product.description}</p>
+      <div className={style.container}>
+        <div>
+          <img src={product.image} className={style.img}></img>
+        </div>
+        <div className={style.detail}>
+          <h1 className={style.productDetailName}>{product.name}</h1>
+          <p className={style.productDetailDescription}>
+            {product.description}
+          </p>
           <a href="#">Visit acer store</a>
-          <div className="rate">
-            <div className="star-box">
+          <div className={style.rate}>
+            <div className={style.starBox}>
               <p>4.3</p>
               <img src="" alt="star icon" />
               <img src="" alt="star icon" />
@@ -81,9 +88,9 @@ function Product() {
           </div>
           <p>6K+ bought in past month</p>
           <hr />
-          <div className="price-detail">
-            <div className="price-info">
-              <div className="sale">-7%</div>
+          <div className={style.priceDetail}>
+            <div className={style.priceInfo}>
+              <div className={style.sale}>-7%</div>
               <div>
                 <p>$</p>
                 <p>25000</p>
@@ -109,7 +116,7 @@ function Product() {
               <a href="#">
                 <div>Extra Savings</div>
                 <p>
-                  Amazon Music offer with this purchase 1 Applicable Promotion{" "}
+                  Amazon Music offer with this purchase 1 Applicable Promotion
                 </p>
                 <img src="" alt="arrow icon" />
               </a>
@@ -119,15 +126,15 @@ function Product() {
           <div>
             <p>
               style:
-              <span>R7 5700U</span>
+              <span>{selectedCpu.name}</span>
             </p>
           </div>
           <div>
-            <button>
+            <button onClick={() => setSelectedCpu({ name: "R3 7320U", price: 299.99 })}>
               <p>R3 7320U</p>
               <p>$299.99</p>
             </button>
-            <button>
+            <button  onClick={() => setSelectedCpu({ name: "R7 5700U", price: 499.99 })}>
               <p>R7 5700U</p>
               <p>$499.99</p>
             </button>
@@ -265,74 +272,66 @@ function Product() {
           </div>
           <hr />
         </div>
-        <div className="order"></div>
-        <div>
-          <p>Buy new:</p>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <p>$</p>
-          <p>25000</p>
-          <p>99</p>
-        </div>
-        <p>
-          $91.31 Shipping & Import Fees Deposit to Iran Details Delivery
-          <span>Wednesday, May 15</span>
-        </p>
-        <a href="#">
-          <img src="" alt="" />
-          Deliver to Iran
-        </a>
-        <p>In Stock</p>
-        <select name="" id="">
-          <option value="1">Quantity: 1</option>
-          <option value="2">Quantity: 2</option>
-          <option value="3">Quantity: 3</option>
-          <option value="4">Quantity: 4</option>
-          <option value="5">Quantity: 5</option>
-          <option value="6">Quantity: 6</option>
-          <option value="7">Quantity: 7</option>
-          <option value="8">Quantity: 8</option>
-          <option value="9">Quantity: 9</option>
-          <option value="10">Quantity: 10</option>
-        </select>
-        <button>Add to cart</button>
-        <div>
+        <div className={style.order}>
+          <div>
+            <p>Buy new:</p>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <p>$</p>
+            <p>25000</p>
+            <p>99</p>
+          </div>
+          <p>
+            $91.31 Shipping & Import Fees Deposit to Iran Details Delivery
+            <span>Wednesday, May 15</span>
+          </p>
+          <a href="#">
+            <img src="" alt="" />
+            Deliver to Iran
+          </a>
+          <p>In Stock</p>
+          <select name="" id="">
+            <option value="1">Quantity: 1</option>
+            <option value="2">Quantity: 2</option>
+            <option value="3">Quantity: 3</option>
+            <option value="4">Quantity: 4</option>
+            <option value="5">Quantity: 5</option>
+            <option value="6">Quantity: 6</option>
+            <option value="7">Quantity: 7</option>
+            <option value="8">Quantity: 8</option>
+            <option value="9">Quantity: 9</option>
+            <option value="10">Quantity: 10</option>
+          </select>
+          <button>Add to cart</button>
           <div>
             <div>
-              <p>Ships from</p>
-              <p>Amazon.com</p>
-            </div>
-            <div>
-              <p>Sold by</p>
-              <p>Amazon.com</p>
-            </div>
-            <div>
-              <p>
-              Returns
-              </p>
-              <p>
-              Eligible for Return, Refund or Replacement within 30 days of receipt
-              </p>
+              <div>
+                <p>Ships from</p>
+                <p>Amazon.com</p>
               </div>
-            <div>
-              <p>
-              Payments
-              </p>
-              <p>
-              Secure transaction
-              </p>
+              <div>
+                <p>Sold by</p>
+                <p>Amazon.com</p>
+              </div>
+              <div>
+                <p>Returns</p>
+                <p>
+                  Eligible for Return, Refund or Replacement within 30 days of
+                  receipt
+                </p>
+              </div>
+              <div>
+                <p>Payments</p>
+                <p>Secure transaction</p>
+              </div>
+              <div>
+                <p>Support</p>
+                <p>Product support included</p>
+              </div>
             </div>
-            <div>
-              <p>
-              Support
-              </p>
-              <p>
-              Product support included
-              </p>
-            </div>
+            <button>See more</button>
           </div>
-          <button>See more</button>
         </div>
       </div>
       {/* <div>

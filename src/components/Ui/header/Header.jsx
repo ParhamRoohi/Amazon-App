@@ -1,17 +1,17 @@
 
+import { Link } from "react-router-dom";
+import Amazon from "../../../../public/Images/Amazon.jpg";
+import style from "./Header.module.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import SearchIcon from "@mui/icons-material/Search";
 import Menu from "../../menu/Menu";
-import { Link } from "react-router-dom";
-import Amazon from "../../../../public/Images/Amazon.jpg";
-import "./Header.css";
-import "../../menu/Menu.css"
+
 
 function Header() {
   return (
-    <header className="header">
-      <div className="upper">
+    <header className={style.header}>
+      <div className={style.upper}>
         <img src={Amazon} alt="Amazon Photo" />
         <div>
           <form>
@@ -33,7 +33,8 @@ function Header() {
           </Link>
         </div>
       </div>
-      <div className="downer">
+      <div className={style.downer}>
+          <Menu />
         <ul>
           <li>
             <p>Today Deals</p>
@@ -52,9 +53,6 @@ function Header() {
           </li>
         </ul>
       </div>
-      <div className="icon-menu-container">
-              <Menu />
-            </div>
     </header>
   );
 }
