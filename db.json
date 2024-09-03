@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "id": "0",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "1",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Apple",
+      "barand": "Iphone 13",
+      "price": "100",
+      "storage": "128",
+      "amount": "20",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quas assumenda laboriosam, voluptatum molestias voluptate ullam eaque. Recusandae saepe aperiam veritatis eligendi excepturi officiis quam obcaecati. Eos officia iure totam!",
+      "image": "https://i.pinimg.com/564x/1e/e2/73/1ee273e6921a62789276769d1e95d12e.jpg"
+    }
+  ]
+}
