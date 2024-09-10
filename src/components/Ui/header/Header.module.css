@@ -1,95 +1,110 @@
-
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    justify-content: space-between;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.upper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(19, 25, 33);
+  padding: 10px 0;
+}
+
+.downer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  background-color: rgb(35, 47, 62);
+  padding: 10px 0;
+}
+
+.upper img {
+  height: 50px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.allDropDown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.list{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style: none;
+  border: 1px solid #ddd;
+}
+
+.formContainer :hover ul {
+  display: block;
+}
+
+.upper form input {
+  padding: 5px;
+}
+
+.deliveryLocation {
+  display: flex;
+  flex-direction: column;
+}
+.locationElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   
-  .upper {
-    width: 100%; 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgb(19, 25, 33);
-    padding: 10px 0; 
-  }
-  
-  .downer {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    color: white;
-    background-color: rgb(35, 47, 62);
-    padding: 10px 0;
-  }
-  
-  .upper img {
-    height: 50px;
-  }
-  
-  .upper form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .upper form div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 10px;
-    position: relative; 
-  }
-  
-  .upper form div ul {
-    display: none;
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    background-color: white;
-    list-style: none;
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  .upper form div:hover ul {
-    display: block; 
-  }
-  
-  .upper form input {
-    padding: 5px;
-    margin-right: 10px; 
-  }
-  
-  .upper form svg {
-    cursor: pointer;
-  }
-  
-  .downer ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .downer ul li {
-    margin: 0 10px;
-  }
-  
-  .downer ul li p {
-    margin: 0;
-    cursor: pointer;
-  }
-  
-  .icon-menu-container {
-    display: flex;
-    align-items: center;
-    color: white;
-  }
+}
+
+.allDropDown{
+  background-color: rgb(230,230,230);
+  color: black;
+}
+
+.searchInput{
+  background-color: rgb(241,245,249);
+}
+
+.menu{
+  margin-left: 10px;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  cursor: pointer;
+}
+.item li{
+  margin: 0 5px;
+}
+
+.nationality{
+  display: flex;
+  align-items: center;
+}
+
+.signIn{
+  color: white;
+}
+
+.account{
+  display: flex;
+  flex-direction: row;
+}

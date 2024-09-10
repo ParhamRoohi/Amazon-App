@@ -4,15 +4,26 @@ import axios from "axios";
 import style from "./Product.module.css";
 import Header from "../../components/Ui/header/Header";
 import Footer from "../../components/Ui/footer/Footer";
+import PlaceIcon from "@mui/icons-material/Place";
+import ChatIcon from "@mui/icons-material/Chat";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import rate from "../../../public/Images/rateImg.png";
+
 
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [selectedCpu, setSelectedCpu] = useState({ name: "R3 7320U", price: 299.99 });
-
-  // const [quantity, setQuantity] = useState(1);
-  // const [status, setStatus] = useState(false);
-  // const [totalPrice, setTotalPrice] = useState(100);
+  const [selectedCpu, setSelectedCpu] = useState({
+    name: "R3 7320U",
+    price: 299.99,
+  });
+  const [showInfo, setShowInfo] = useState(false);
+  const [showDes, setShowDes] = useState(false);
+  const [showOrder, setShowOrder] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [status, setStatus] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(100);
 
   useEffect(() => {
     getProduct();
@@ -27,34 +38,42 @@ function Product() {
       console.log(error);
     }
   };
+  const handelshowInfo = () => {
+    setShowInfo(!showInfo);
+  };
+  const handelshowDes = () => {
+    setShowDes(!showDes);
+  };
+  const handelshowOrder = () => {
+    setShowOrder(!showOrder);
+  };
 
+  const handleAddToCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProductIndex = cart.findIndex(
+      (item) => item.id === product.id
+    );
 
-  // const handleAddToCart = () => {
-  //   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   const existingProductIndex = cart.findIndex(
-  //     (item) => item.id === product.id
-  //   );
+    if (existingProductIndex >= 0) {
+      cart[existingProductIndex].totalPrice =
+        product.price * cart[existingProductIndex].quantity;
+      cart[existingProductIndex].quantity += quantity;
+    } else {
+      cart.push({ ...product, quantity, totalPrice: product.price * quantity });
+    }
 
-  //   if (existingProductIndex >= 0) {
-  //     cart[existingProductIndex].totalPrice =
-  //       product.price * cart[existingProductIndex].quantity;
-  //     cart[existingProductIndex].quantity += quantity;
-  //   } else {
-  //     cart.push({ ...product, quantity, totalPrice: product.price * quantity });
-  //   }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setStatus(true);
+    setTotalPrice(product.price * quantity);
+  };
+  const handleRemoveFromCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const updatedCart = cart.filter((item) => item.id !== product.id);
 
-  //   localStorage.setItem("cart", JSON.stringify(cart));
-  //   setStatus(true);
-  //   setTotalPrice(product.price * quantity);
-  // };
-  // const handleRemoveFromCart = () => {
-  //   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   const updatedCart = cart.filter((item) => item.id !== product.id);
-
-  //   localStorage.setItem("cart", JSON.stringify(updatedCart));
-  //   setStatus(false);
-  //   setTotalPrice(product.price * quantity);
-  // };
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setStatus(false);
+    setTotalPrice(product.price * quantity);
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -76,25 +95,29 @@ function Product() {
           <div className={style.rate}>
             <div className={style.starBox}>
               <p>4.3</p>
-              <img src="" alt="star icon" />
-              <img src="" alt="star icon" />
-              <img src="" alt="star icon" />
-              <img src="" alt="star icon" />
-              <img src="" alt="star icon" />
+              <img src={rate} alt="star icon" />
+              <img src={rate} alt="star icon" />
+              <img src={rate} alt="star icon" />
+              <img src={rate} alt="star icon" />
+              <img src={rate} alt="star icon" />
             </div>
             <a href="#"> 1,752 ratings</a>
             <span>|</span>
-            <a href="">Search this page</a>
+            <a href="#"> Search this page</a>
           </div>
           <p>6K+ bought in past month</p>
           <hr />
           <div className={style.priceDetail}>
             <div className={style.priceInfo}>
               <div className={style.sale}>-7%</div>
-              <div>
-                <p>$</p>
+              <div className={style.cost}>
+                <p>
+                  <sup>$</sup>
+                </p>
                 <p>25000</p>
-                <p>99</p>
+                <p>
+                  <sup>99</sup>
+                </p>
               </div>
             </div>
             <p>
@@ -130,52 +153,79 @@ function Product() {
             </p>
           </div>
           <div>
-            <button onClick={() => setSelectedCpu({ name: "R3 7320U", price: 299.99 })}>
+            <button
+              onClick={() =>
+                setSelectedCpu({ name: "R3 7320U", price: 299.99 })
+              }
+              className={
+                selectedCpu === "R3 7320U" ? style.selected : style.unSelected
+              }
+            >
               <p>R3 7320U</p>
               <p>$299.99</p>
             </button>
-            <button  onClick={() => setSelectedCpu({ name: "R7 5700U", price: 499.99 })}>
+            <button
+              onClick={() =>
+                setSelectedCpu({ name: "R7 5700U", price: 499.99 })
+              }
+              className={
+                selectedCpu === "R7 5700U" ? style.selected : style.unSelected
+              }
+            >
               <p>R7 5700U</p>
               <p>$499.99</p>
             </button>
           </div>
           <div>
-            <div>
+            <div className={style.titleInfo}>
               <div>
-                <div>
-                  <p>Brand</p>
-                  <p>Model Name</p>
-                  <p>Screen Size</p>
-                  <p>Color</p>
-                  <p>Hard Disk Size</p>
-                  <p>CPU Model</p>
-                  <p>Ram Memory Installed Size</p>
-                  <p>Opratiing System</p>
-                  <p>Special Feature</p>
-                  <p>Graphics Card Description</p>
-                </div>
+                <p>Brand</p>
+                <p>Model Name</p>
+                <p>Screen Size</p>
+                <p>Color</p>
+                <p>Hard Disk Size</p>
+                <p>CPU Model</p>
+                <p>Ram Memory Installed Size</p>
+                {showInfo && (
+                  <div>
+                    <p>Opratiing System</p>
+                    <p>Special Feature</p>
+                    <p>Graphics Card Description</p>
+                  </div>
+                )}
               </div>
               <div>
-                <div>
-                  <p>acer</p>
-                  <p>Laptop</p>
-                  <p>15.6 Inches</p>
-                  <p>Silver</p>
-                  <p>128 GB</p>
-                  <p>Ryzen 3</p>
-                  <p>8 GB</p>
-                  <p>Windows 11 s</p>
-                  <p>Backlit Keyboard</p>
-                  <p>Integrated</p>
-                </div>
+                <p>{product.barand}</p>
+                <p>{product.name}</p>
+                <p>{product.screenSize}</p>
+                <p>{product.color}</p>
+                <p>{product.storage}</p>
+                <p>{product.cPU}</p>
+                <p>{product.ram}</p>
+                {showInfo && (
+                  <div>
+                    <p>{product.opratiingSystem}</p>
+                    <p>{product.specialFeature}</p>
+                    <p>{product.graphicsCard}</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
           <div>
-            <div>
-              <img src="" alt="dot icon" />
-            </div>
-            <button>See more</button>
+            <p onClick={handelshowInfo} className={style.moreInfo}>
+              {showInfo ? (
+                <div>
+                  <KeyboardArrowUpIcon />
+                  show less
+                </div>
+              ) : (
+                <div>
+                  <KeyboardArrowDownIcon />
+                  show more
+                </div>
+              )}
+            </p>
           </div>
           <hr />
           <div>
@@ -232,35 +282,51 @@ function Product() {
                   while not plugged in.
                 </p>
               </li>
-              <li>
-                <p>
-                  Ports For All Your Accessories: 1 - USB Type-C Port USB 3.2
-                  Gen 2 (up to 10 Gbps) DisplayPort over USB Type-C & USB
-                  Charging, 2 - USB 3.2 Gen 1 Ports, 1 - HDMI 2.1 Port with HDCP
-                  support, 1 - Headphone/Speaker/Line-Out Jack, DC-in for AC
-                  adapter
-                </p>
-              </li>
-              <li>
-                <p>
-                  What is In the Box: Acer Aspire Laptop, AC Adapter, Power Cord
-                </p>
-              </li>
-              <li>
-                <p>Keyboard backlight not present on this model</p>
-              </li>
+              {showDes && (
+                <>
+                  <li>
+                    <p>
+                      Ports For All Your Accessories: 1 - USB Type-C Port USB
+                      3.2 Gen 2 (up to 10 Gbps) DisplayPort over USB Type-C &
+                      USB Charging, 2 - USB 3.2 Gen 1 Ports, 1 - HDMI 2.1 Port
+                      with HDCP support, 1 - Headphone/Speaker/Line-Out Jack,
+                      DC-in for AC adapter
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      What is In the Box: Acer Aspire Laptop, AC Adapter, Power
+                      Cord
+                    </p>
+                  </li>
+                  <li>
+                    <p>Keyboard backlight not present on this model</p>
+                  </li>
+                </>
+              )}
             </ol>
             <div>
-              <div>
-                <img src="" alt="dot icon" />
-              </div>
-              <button>See more</button>
+              <p onClick={handelshowDes}>
+                {showInfo ? (
+                  <div>
+                    <KeyboardArrowUpIcon />
+                    show less
+                  </div>
+                ) : (
+                  <div>
+                    <KeyboardArrowDownIcon />
+                    show more
+                  </div>
+                )}
+              </p>
             </div>
             <div>
-              <a href="">
-                <img src="" alt="" />
-                <p>Report an issue with this product or seller</p>
-              </a>
+              <div className={style.report}>
+                <ChatIcon/>
+                <a href="#">
+                  <p>Report an issue with this product or seller</p>
+                </a>
+              </div>
               <p>
                 <span>Note:</span>
                 Products with electrical plugs are designed for use in the US.
@@ -275,23 +341,37 @@ function Product() {
         <div className={style.order}>
           <div>
             <p>Buy new:</p>
-            <img src="" alt="" />
           </div>
-          <div>
-            <p>$</p>
-            <p>25000</p>
-            <p>99</p>
-          </div>
-          <p>
+          {
+            <div className={style.price}>
+              <p>
+                <sup>$</sup>
+              </p>
+              <p className={style.number}>{totalPrice}</p>
+              <p>
+                <sup>99</sup>
+              </p>
+            </div>
+          }
+          <p className={style.detail}>
             $91.31 Shipping & Import Fees Deposit to Iran Details Delivery
             <span>Wednesday, May 15</span>
           </p>
-          <a href="#">
-            <img src="" alt="" />
-            Deliver to Iran
-          </a>
-          <p>In Stock</p>
-          <select name="" id="">
+          <div className={style.location}>
+            <PlaceIcon style={{ width: 17 }} />
+            <a href="#">
+              <img src="" alt="" />
+              Deliver to Iran
+            </a>
+          </div>
+          <p className={style.stock}>In Stock</p>
+          <select
+            className={style.quantity}
+            name="quantity"
+            id="quantity"
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
+          >
             <option value="1">Quantity: 1</option>
             <option value="2">Quantity: 2</option>
             <option value="3">Quantity: 3</option>
@@ -303,34 +383,48 @@ function Product() {
             <option value="9">Quantity: 9</option>
             <option value="10">Quantity: 10</option>
           </select>
-          <button>Add to cart</button>
+          {status ? (
+            <button onClick={handleRemoveFromCart} className={style.cartBtn}>
+              Remove to Cart
+            </button>
+          ) : (
+            <button onClick={handleAddToCart} className={style.cartBtn}>
+              Add to Cart
+            </button>
+          )}
           <div>
             <div>
-              <div>
+              <div className={style.shipForm}>
                 <p>Ships from</p>
                 <p>Amazon.com</p>
               </div>
-              <div>
+              <div className={style.shipForm}>
                 <p>Sold by</p>
                 <p>Amazon.com</p>
               </div>
-              <div>
+              <div className={style.shipForm}>
                 <p>Returns</p>
-                <p>
+                <p className={style.returns}>
                   Eligible for Return, Refund or Replacement within 30 days of
                   receipt
                 </p>
               </div>
-              <div>
+              <div className={style.shipForm}>
                 <p>Payments</p>
-                <p>Secure transaction</p>
+                <p className={style.payment}>Secure transaction</p>
               </div>
               <div>
-                <p>Support</p>
-                <p>Product support included</p>
+                {showOrder && (
+                  <>
+                    <p>Support</p>
+                    <p>Product support included</p>
+                  </>
+                )}
               </div>
             </div>
-            <button>See more</button>
+            <p onClick={handelshowOrder} className={style.buyShowMore}>
+              {showOrder ? "show less" : "show more"}
+            </p>
           </div>
         </div>
       </div>
