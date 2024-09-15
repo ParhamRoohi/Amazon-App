@@ -156,20 +156,20 @@ button {
 }
 .quantity {
   border-radius: 8px;
-  background-color: rgb(240,242,242);
+  background-color: rgb(240, 242, 242);
   width: 100%;
 }
 .quantity:hover {
-  background-color: rgb(213,217,217);
+  background-color: rgb(213, 217, 217);
 }
 .cartBtn {
-  background-color: rgb(255,215,20);
+  background-color: rgb(255, 215, 20);
   border: none;
   cursor: pointer;
   border-radius: 9999px;
   width: 100%;
   border-width: 1px;
-  border-color: rgb(250,204,21);
+  border-color: rgb(250, 204, 21);
 }
 
 .shipForm {
@@ -179,53 +179,53 @@ button {
   justify-content: space-between;
 }
 
-.payment{
-  color: rgb(0 ,113 ,133);
+.payment {
+  color: rgb(0, 113, 133);
 }
 
-.payment:hover{
+.payment:hover {
   color: red;
 }
 
-.returns:hover{
+.returns:hover {
   color: red;
 }
 
 .returns {
-  color: rgb(0 ,113 ,133);
+  color: rgb(0, 113, 133);
 }
 
-.buyShowMore{
+.buyShowMore {
   cursor: pointer;
-  color: rgb(0,113,113);
+  color: rgb(0, 113, 113);
 }
 
-.buyShowMore:hover{
+.buyShowMore:hover {
   color: red;
 }
 
-.cost{
+.cost {
   display: flex;
   flex-direction: row;
 }
 
-.moreInfo{
+.moreInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.selected{
+.selected {
   padding: 8px;
   font-weight: 700;
   border-width: 1px;
-  border-color: rgb(237,169,58);
+  border-color: rgb(237, 169, 58);
   box-shadow: #0000;
   scrollbar-shadow-color: 0 0 3px 2px;
   margin: 5px 10px 5px 0px;
-} 
+}
 
-.unSelected{
+.unSelected {
   padding: 8px;
   font-weight: 700;
   border-width: 1px;
@@ -233,16 +233,18 @@ button {
   margin: 5px 10px 5px 0px;
 }
 
-.selected:focus { 
-  --tw-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5); 
-  --tw-shadow-colored: 0 0 3px 2px var(--tw-shadow-color); 
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), 
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); 
-  outline: none; 
+.selected:focus {
+  --tw-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+  --tw-shadow-colored: 0 0 3px 2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  outline: none;
 }
-.report{
+.report {
   display: flex;
   flex-direction: row;
   align-items: center;
-
+}
+.promotion:hover {
+  color: red;
 }

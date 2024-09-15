@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import style from "./Home.module.css"
 import Footer from "../../components/Ui/footer/Footer";
 import Header from "../../components/Ui/header/Header";
-import style from "./Home.module.css"
+import axios from "axios";
 
 function Home() {
   const [data, setData] = useState([]);

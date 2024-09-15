@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import Amazon from "../../../../public/Images/Amazon.jpg";
 import style from "./Header.module.css";
+import Amazon from "../../../../public/Images/Amazon.png";
+import flag from "../../../../public/Images/flag.jpeg";
+import Menu from "../../menu/Menu";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import Menu from "../../menu/Menu";
+
 
 function Header() {
   return (
@@ -21,35 +23,39 @@ function Header() {
         </div>
         <div>
           <div>
-          <form className={style.formContainer}>
-            <div className={style.allDropDown}>
-              <p>All</p>
-              <ArrowDropDownIcon style={{ color: "black" }} />
-              <ul className={style.list}>
-                <li>All</li>
-                <li>Mobiles</li>
-                <li>Laptops</li>
-                <li>Mobile Accessories</li>
-              </ul>
-            </div>
-            <input
-              type="text"
-              autoComplete="off"
-              placeholder="Search Amazon"
-              className={style.searchInput}
-              style={{width:"500px"}}
-            />
-            <SearchIcon
-              style={{
-                backgroundColor: "rgb(253,186,116)",
-                borderColor: "rgb(253,186,116)",
-              }}
-            />
-          </form>
+            <form className={style.formContainer}>
+              <div className={style.allDropDown}>
+                <p>All</p>
+                <ArrowDropDownIcon style={{ color: "black" }} />
+                <ul className={style.list}>
+                  <li>All</li>
+                  <li>Mobiles</li>
+                  <li>Laptops</li>
+                  <li>Mobile Accessories</li>
+                </ul>
+              </div>
+              <input
+                type="text"
+                autoComplete="off"
+                placeholder="Search Amazon"
+                className={style.searchInput}
+              />
+              <SearchIcon
+                style={{
+                  height: "27.5",
+                  backgroundColor: "rgb(253,186,116)",
+                  borderColor: "rgb(253,186,116)",
+                }}
+              />
+            </form>
           </div>
         </div>
         <div className={style.nationality}>
-          <img src="" alt="flag" />
+          <img
+            src={flag}
+            alt="flag"
+            style={{ height: "20px", width: "25px", padding: "2px" }}
+          />
           <span style={{ color: "white" }}>EN</span>
           <ArrowDropDownIcon style={{ color: "rgb(204, 204, 204)" }} />
         </div>
@@ -61,8 +67,8 @@ function Header() {
           </div>
         </div>
         <div>
-          <p style={{color:"rgb(204,204,204)"}}>returns</p>
-          <p style={{color: "white"}}>& Orders</p>
+          <p style={{ color: "rgb(204,204,204)" }}>returns</p>
+          <p style={{ color: "white" }}>& Orders</p>
         </div>
         <Link to={"/shop"} style={{ color: "white" }}>
           <AddShoppingCartIcon />
@@ -72,6 +78,7 @@ function Header() {
       <div className={style.downer}>
         <div className={style.menu}>
           <Menu />
+          All
         </div>
         <ul className={style.item}>
           <li>

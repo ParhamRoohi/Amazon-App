@@ -1,4 +1,3 @@
-
 import style from "./Footer.module.css";
 
 function Footer() {
@@ -109,6 +108,11 @@ function Footer() {
           </div>
         </div>
         <hr />
+        <div className={style.links}>
+        <div><p>English</p></div>
+        <div><p><span>$</span>USD - U.s Dollor</p></div>
+        <div><p>United States</p></div>
+      </div>
       </footer>
     );
 }

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import style from "./Product.module.css";
 import Header from "../../components/Ui/header/Header";
 import Footer from "../../components/Ui/footer/Footer";
+import rate from "../../../public/Images/rateImg.png";
+import axios from "axios";
 import PlaceIcon from "@mui/icons-material/Place";
 import ChatIcon from "@mui/icons-material/Chat";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import rate from "../../../public/Images/rateImg.png";
 
 
 function Product() {
@@ -27,8 +27,17 @@ function Product() {
 
   useEffect(() => {
     getProduct();
-    // eslint-disable-next-line
-  }, []);
+    if (product) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingProductIndex = cart.findIndex(
+        (item) => item.id === product.id
+      );
+      if (existingProductIndex >= 0) {
+        cart[existingProductIndex].quantity = quantity;
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+    }
+  }, [quantity, product]);
 
   const getProduct = async () => {
     try {
@@ -132,16 +141,31 @@ function Product() {
             </div>
             <p>
               Available at a lower price from
-              <a href="#">other sellers</a>
+              <a href="#" >other sellers</a>
               that may not offer free Prime shipping.
             </p>
             <div>
-              <a href="#">
-                <div>Extra Savings</div>
+              <a className={style.promotion}
+                href="#"
+                style={{
+                  display: "flex",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  textDecoration:"none"
+                }}
+              >
+                <div
+                  style={{
+                    backgroundColor: "rgba(237, 169, 58, .9)",
+                    color: "rgb(255 255 255)",
+                  }}
+                >
+                  Extra Savings
+                </div>
                 <p>
                   Amazon Music offer with this purchase 1 Applicable Promotion
                 </p>
-                <img src="" alt="arrow icon" />
+                <KeyboardArrowDownIcon />
               </a>
             </div>
           </div>
@@ -322,7 +346,7 @@ function Product() {
             </div>
             <div>
               <div className={style.report}>
-                <ChatIcon/>
+                <ChatIcon />
                 <a href="#">
                   <p>Report an issue with this product or seller</p>
                 </a>
@@ -428,45 +452,6 @@ function Product() {
           </div>
         </div>
       </div>
-      {/* <div>
-      <div>
-        <img
-          src={product.image}
-          alt={product.name}
-          className="product-detail-image"
-        />
-      </div>
-      <div className="product-detail-info">
-        <h1 className="product-detail-name">{product.name}</h1>
-        <p className="product-detail-brand">{product.brand}</p>
-        <p className="product-detail-price">${product.price}</p>
-        <p className="product-detail-description">{product.description}</p>
-        <div className="quantity-selector">
-          <label htmlFor="quantity">Quantity:</label>
-          <select
-            id="quantity"
-            value={quantity}
-            onChange={(e) => setQuantity(Number(e.target.value))}
-          >
-            {[...Array(10).keys()].map((num) => (
-              <option key={num + 1} value={num + 1}>
-                {num + 1}
-              </option>
-            ))}
-          </select>
-        </div>
-        <p className="total-price">Total Price: ${totalPrice.toFixed(2)}</p>
-        {status ? (
-          <button onClick={handleRemoveFromCart} className="go-to-cart-btn">
-            Remove to Cart
-          </button>
-        ) : (
-          <button onClick={handleAddToCart} className="add-to-cart-btn">
-            Add to Cart
-          </button>
-        )}
-      </div>
-    </div> */}
       <Footer />
     </>
   );
